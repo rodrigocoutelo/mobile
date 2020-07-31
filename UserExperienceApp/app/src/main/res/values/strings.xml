@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UserExperienceApp</string>
+    <string name="donut_title">Donuts</string>
+    <string name="donut_description">Donut Description</string>
+</resources>
