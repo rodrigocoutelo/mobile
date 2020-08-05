@@ -62,8 +62,7 @@ public class PaxAdapter extends RecyclerView.Adapter<PaxAdapter.PaxViewHolder> {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 Bundle bundle = new Bundle();
-                bundle.
-                intent.putExtras()
+
             }
         });
   }
