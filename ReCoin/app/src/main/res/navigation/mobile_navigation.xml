@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_dashboard"
+    >
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.recoin.ui.dashboard.DashboardFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_dashboard"
+        />
+
+    <fragment
+        android:id="@+id/nav_accounts"
+        android:name="com.example.recoin.ui.accounts.AccountsFragment"
+        android:label="@string/menu_accounts"
+        tools:layout="@layout/fragment_accounts" >
+        <action
+            android:id="@+id/action_nav_accounts_to_nav_create"
+            app:destination="@id/nav_create" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_transactions"
+        android:name="com.example.recoin.ui.transactions.TransactionsFragment"
+        android:label="@string/menu_transactions"
+        tools:layout="@layout/fragment_transactions" />
+
+    <fragment
+        android:id="@+id/nav_create"
+        android:name="com.example.recoin.ui.transactions.TransactionsFragment"
+        android:label="@string/menu_create"
+        tools:layout="@layout/fragment_create" />
+
+</navigation>
