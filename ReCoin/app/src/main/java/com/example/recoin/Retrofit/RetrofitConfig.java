@@ -10,7 +10,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class RetrofitConfig {
 
-    private final Retrofit retrofit;
+    private Retrofit retrofit;
 
 
     public RetrofitConfig() {
@@ -20,5 +20,8 @@ public class RetrofitConfig {
                 .build();
     }
 
+    public <T> T getService(Class<T> classService ) {
+        return this.retrofit.create(classService);
+    }
 
 }

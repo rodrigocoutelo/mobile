@@ -21,9 +21,6 @@ public interface AvatarDao {
     @Query("Select * from Avatar where AvatarID = :avatarID ")
     Avatar getByID(String avatarID);
 
-    @Query("Select * from Avatar where useruserID = :userID")
-    Avatar getByUser(String userID);
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Avatar> avatars);
 

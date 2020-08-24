@@ -17,9 +17,7 @@ public class Avatar {
     private String _id;
     private String url;
     private String contentType;
-    @Embedded(prefix = "user")
-    @NonNull
-    private User user;
+
 
     @NonNull
     public String get_id() {
@@ -46,12 +44,4 @@ public class Avatar {
         this.contentType = contentType;
     }
 
-    @NonNull
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(@NonNull User user) {
-        this.user = user;
-    }
 }

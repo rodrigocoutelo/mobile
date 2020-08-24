@@ -17,26 +17,26 @@ import retrofit2.http.Part;
 public interface AvatarService {
 
     @Headers("Content-Type: application/json")
-    @GET("uploads")
+    @GET("avatars")
     Call<List<Avatar>> list(@Header("userType") String userType,
                             @Header("userLogin") String userLogin,
-                            @Header("password") String password);
+                            @Header("userpassword") String password);
 
     @Headers("Content-Type: application/json")
-    @GET("upload")
-    Call<Avatar> get(@Header("userType") String userType,
+    @GET("avatar")
+    Call<Avatar> getAvatar(@Header("userType") String userType,
                          @Header("userLogin") String userLogin,
                          @Header("password") String password,
-                         @Header("userid") String userID
+                         @Header("userpassword") String userID
                         );
 
     @Multipart
-    @POST("upload")
-    Call<User> editUser(@Header("userType") String userType,
+    @POST("avatar")
+    Call<Avatar> upload(@Header("userType") String userType,
                         @Header("userLogin") String userLogin,
                         @Header("password") String password,
                         @Header("userid") String userID,
-                        @Part("avatar") MultipartBody.Part avatar
+                        @Part MultipartBody.Part image
     );
 
 

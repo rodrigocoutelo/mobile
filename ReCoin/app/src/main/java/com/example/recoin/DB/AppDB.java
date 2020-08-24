@@ -16,16 +16,12 @@ import com.example.recoin.Model.BankAccount;
 import com.example.recoin.Model.BankTransaction;
 import com.example.recoin.Model.User;
 
-@Database(entities = {User.class, BankAccount.class, BankTransaction.class, Avatar.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class, BankAccount.class, BankTransaction.class, Avatar.class}, version = 2, exportSchema = false)
 @TypeConverters({Converters.class, TimeStampConverter.class})
 public abstract class AppDB extends RoomDatabase {
 
-    abstract public UserDao userDao();
-    abstract public BankAccountDao bankAccountDao();
-    abstract public BankTransactionDao bankTransactionDao();
-    abstract public AvatarDao avatarDao();
-
     private static AppDB instance;
+
 
     public static AppDB getInstance(Context context) {
 
@@ -39,6 +35,11 @@ public abstract class AppDB extends RoomDatabase {
         }
         return instance;
     }
+
+    abstract public UserDao userDao();
+    abstract public BankAccountDao bankAccountDao();
+    abstract public BankTransactionDao bankTransactionDao();
+    abstract public AvatarDao avatarDao();
 
 
 }

@@ -5,12 +5,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.TypeConverters;
 
-import com.example.recoin.DB.TimeStampConverter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.sql.Date;
 
 @Entity(tableName = "Users")
 @JsonIgnoreProperties({"uid","__v", "createdAt","updatedAt"})
@@ -24,7 +20,7 @@ public class User {
     private String cpf;
     private String email;
     private String pws;
-    private String telefone;
+    private String phone;
     @Embedded(prefix = "avatar")
     private Avatar avatar;
 
@@ -48,8 +44,8 @@ public class User {
         this.pws = pws;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public void setAvatar(Avatar avatar) {
@@ -75,8 +71,8 @@ public class User {
         return pws;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getPhone() {
+        return phone;
     }
 
     public Avatar getAvatar() {

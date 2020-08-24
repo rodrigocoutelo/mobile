@@ -20,28 +20,30 @@ public interface BankAccountService {
 
     @Headers("Content-Type: application/json")
     @GET("getAllAccounts")
-    Call<List<BankAccount>> list(@Header("userType") String userType,
+    Call<List<BankAccount>> list(@Header("usertype") String userType,
                                  @Header("userLogin") String userLogin,
-                                 @Header("password") String password
+                                 @Header("userpassword") String password
                                          );
 
     @Headers("Content-Type: application/json")
     @GET("accounts")
-    Call<BankAccount> get(@Header("userType") String userType,
+    Call<BankAccount> get(@Header("usertype") String userType,
                      @Header("userLogin") String userLogin,
-                     @Header("password") String password,
+                     @Header("userpassword") String password,
                      @Header("userid") String userID,
                      @Body BankAccount account
 
     );
 
-    @Multipart
-    @POST("upload")
-    Call<User> editUser(@Header("userType") String userType,
-                        @Header("userLogin") String userLogin,
-                        @Header("password") String password,
-                        @Header("userid") String userID,
-                        @Part("avatar") MultipartBody.Part avatar
+    @Headers("Content-Type: application/json")
+    @POST("accounts")
+    Call<BankAccount> insert(@Header("usertype") String userType,
+                          @Header("userLogin") String userLogin,
+                          @Header("userpassword") String password,
+                          @Body BankAccount account
+
     );
+
+
 
 }
